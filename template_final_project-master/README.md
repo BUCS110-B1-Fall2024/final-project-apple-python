@@ -1,18 +1,18 @@
 
 :warning: Everything between << >> needs to be replaced (remove << >> after replacing)
 
-# << Project Title >>
-## CS110 B1 Final Project  << Semester, Year >>
+# Apple Python
+## CS110 B1 Final Project  Fall, 2024
 
 ## Team Members
 
-<< List team member names >>
+Allison Jenkins, Jessie Kaufman
 
 ***
 
 ## Project Description
 
-<< Give an overview of your project >>
+Our project will take the user on a tour of the Binghamton campus. It will include pictures of the different places, and extra information about the buildings.
 
 ***    
 
@@ -20,7 +20,7 @@
 
 ### Initial Design
 
-![initial gui](assets/gui.jpg)
+(assests/College_Tour.jpg)
 
 ### Final Design
 
@@ -30,11 +30,11 @@
 
 ### Features
 
-1. << Feature 1 >>
-2. << Feature 2 >>
-3. << Feature 3 >>
-4. << Feature 4 >>
-5. << Feature 5 >>
+1. A Start Screen
+2. An Overall Map Where You Can Choose Where To Go
+3. A Back Button 
+4. A Quit Feature To go Back To Start Screen
+5. Different Information Screens For Each Place
 
 ### Classes
 
