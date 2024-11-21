@@ -1,11 +1,6 @@
 import pygame
 #import your controller
-width = 900
-height = 900
-darkgreen = (34,139,34)
-white = (255,255,255)
-clock=pygame.time.Clock()
-clock.tick(60)
+
 
 def main():
     pygame.init()
