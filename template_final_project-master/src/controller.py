@@ -17,10 +17,11 @@ class Controller:
     
     # We can use a dictionary of place_name: file_name
     
-    #Create start and quit buttons
+    self.start = Buttons(200, 350, 75, 50, 'chartreuse4', 'Start')
+    self.quit = Buttons(400, 350, 75, 50, 'coral1', 'Quit')
     
-    clock = pygame.time.Clock()
-    clock.tick(60)
+    self.clock = pygame.time.Clock()
+    self.clock.tick(60)
     
   def mainloop(self):
     #select state loop
