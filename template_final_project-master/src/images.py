@@ -1,25 +1,23 @@
 import pygame
 
 class Images:
-    def __init__(self, screen, pic_path):
-        """Allows an image from a file to be put onto the screen
+    def __init__(self, pic_path, x, y):
+        """Allows an image to be put onto the screen, transforms image to our screen size
 
         Args:
-            screen (str): Where in pyagme the pic will be put
-            pic_path (str): File pathway to the picture being blit onto the screen
-        """
-        self.screen = screen
-        self.pic_path = pic_path
-    
-    def load(self, pic_path):
-        """Using the picture pathway it loads the image
-
-        Args:
-            pic_path (str): The file pathway
+            pic_path (str): File pathway of the image
+            x (int): x-coor. for the picture
+            y (int): y-coor. for the picture
         """
         self.pic = pygame.image.load(pic_path)
-    
-    def blit(self):
-        self.screen.blit(self.pic, (0,0))
-        pygame.display.flip()
+        self.pic = pygame.transform.scale(self.pic, (900, 900))
+        self.coor = x, y
+        
+    def blit(self, screen):
+        """Allows the image to be put onto the pyagme screen
+
+        Args:
+            screen (str): the instance name for the pyagme window
+        """
+        screen.blit(self.pic, (self.coor))
         

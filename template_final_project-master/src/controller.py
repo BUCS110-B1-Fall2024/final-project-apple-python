@@ -1,15 +1,25 @@
 import pygame
+from buttons import Buttons
+from images import Images
 
 class Controller:
   
   def __init__(self):
     #setup pygame data
     pygame.init()
-    width = 900
-    height = 900
-    darkgreen = (34,139,34)
-    white = (255,255,255)
-    clock=pygame.time.Clock()
+    self.width = 900
+    self.height = 900
+    self.screen = pygame.display.set_mode(self.width, self.height)
+    
+    #Colors
+    self.darkgreen = (34,139,34)
+    self.white = (255,255,255)
+    
+    # We can use a dictionary of place_name: file_name
+    
+    #Create start and quit buttons
+    
+    clock = pygame.time.Clock()
     clock.tick(60)
     
   def mainloop(self):
