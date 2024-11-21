@@ -1,6 +1,6 @@
 import pygame
-from buttons import Buttons
-from images import Images
+from src.buttons import Buttons
+from src.images import Images
 
 class Controller:
   
@@ -9,7 +9,10 @@ class Controller:
     pygame.init()
     self.width = 900
     self.height = 900
-    self.screen = pygame.display.set_mode(self.width, self.height)
+    self.screen = pygame.display.set_mode((self.width, self.height))
+    pygame.display.set_caption('College Tour')
+    #pygame.font.init()
+    self.font = pygame.font.Font(None, 20)
     
     #Colors
     self.darkgreen = (34,139,34)
@@ -24,15 +27,35 @@ class Controller:
     self.clock.tick(60)
     
   def mainloop(self):
-    #select state loop
-      
-  
-  ### below are some sample loop states ###
+    #selects state loop
+    state = "MENU"
+    running = True
+    
+    while running:
+      if state == "MENU":
+        state = self.menuloop()
+      elif state == "main":
+        state = self.mainmap()
+      elif state == "places":
+        state = self.places()
+        
+    pygame.quit()
 
   def menuloop(self):
     # Brings up the menu with start and quit buttons
-      #event loop
-
+    running = True
+    while running:
+        self.screen.fill('floralwhite')
+        text = self.font.render('Binghamton Tour', True, 'white', 'black')
+        trect = text.get_rect()
+        self.screen.blit(text, trect)
+        self.start.create(self.screen)
+        self.quit.create(self.screen)
+        for event in pygame.event.get():
+          if event.type == pygame.QUIT:
+            pygame.quit()
+            quit()
+          pygame.display.update()
       #update data
 
       #redraw
@@ -40,12 +63,12 @@ class Controller:
   def mainmap(self):
     #Brings user to main map where they can pick were to start
       #event loop
-
+      pass
       #update data
 
       #redraw
     
-  def places(self):
+  #def places(self):
     #Brings user to different places, with an info button
       #event loop
 

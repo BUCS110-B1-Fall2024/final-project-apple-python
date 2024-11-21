@@ -18,6 +18,7 @@ class Buttons:
         self.height = height
         self.color = color
         self.display = display
+        self.rect = pygame.Rect(x, y, width, height)
 
     def create(self, screen):
         """Creates the button on screen
@@ -25,7 +26,7 @@ class Buttons:
         Args:
             screen (str): Name of the pyagme screen instance
         """
-        pygame.draw.rect(screen, self.color, (self.x, self.y, self.width, self.height))
+        pygame.draw.rect(screen, self.color, self.rect)
     
     def is_clicked(self, mouse_pos):
         """Checks to see whether or not the button has been clicked
