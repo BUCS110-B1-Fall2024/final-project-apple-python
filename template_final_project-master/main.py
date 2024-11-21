@@ -19,15 +19,3 @@ if __name__ == '__main__':
 
 
 
-pygame.display.set_mode(width,height)
-class buttons:
-    def __init__(self, shape, coords,type, font_size=12, t_color=white,):
-        self.shape = shape
-        self.coords = coords
-        self.type = type
-        self.color = color
-        self.text = text
-        return self.type, self.coords, self.shape
-    def displayvid(self):
-    def displayimg(self):
-    def displayinfo(self):
