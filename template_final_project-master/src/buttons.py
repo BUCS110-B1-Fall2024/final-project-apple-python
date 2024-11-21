@@ -27,6 +27,13 @@ class Buttons:
             screen (str): Name of the pyagme screen instance
         """
         pygame.draw.rect(screen, self.color, self.rect)
+        if self.display:
+            font = pygame.font.Font(None, 15)
+            surface = font.render(self.display, True, 'black')
+            textrect = surface.get_rect(center = (self.x +self.width // 2, self.y + self.height // 2))
+            screen.blit(surface, textrect)
+        
+        
     
     def is_clicked(self, mouse_pos):
         """Checks to see whether or not the button has been clicked
