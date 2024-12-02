@@ -38,7 +38,10 @@ Our project will take the user on a tour of the Binghamton campus. It will inclu
 
 ### Classes
 
-- << You should have a list of each of your classes with a description >>
+Class Buttons: makes buttons depending on a given input
+Class Images: Allows images to be displayed
+Class Controller: Defines the game controller
+
 
 ## ATP
 
