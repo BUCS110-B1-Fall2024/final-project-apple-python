@@ -5,22 +5,21 @@ from src.images import Images
 class Controller:
   
   def __init__(self):
-    #setup pygame data
+    #sets up the initial pygame screen
     pygame.init()
     self.width = 900
     self.height = 900
     self.screen = pygame.display.set_mode((self.width, self.height))
     pygame.display.set_caption('College Tour')
-    #pygame.font.init()
     self.font = pygame.font.Font(None, 20)
     
-    #Colors
-    self.darkgreen = (34,139,34)
-    self.white = (255,255,255)
+    #You can just pull color names from https://www.pygame.org/docs/ref/color_list.html
+    #self.darkgreen = (34,139,34)
+    #self.white = (255,255,255)
     
     # We can use a dictionary of place_name: file_name
     
-    self.start = Buttons(200, 350, 75, 50, 'chartreuse4', 'Start')
+    self.start = Buttons(200, 350, 75, 50, 'chartreuse4', 'Start') #Creats a button called start
     self.quit = Buttons(400, 350, 75, 50, 'coral1', 'Quit')
     
     self.clock = pygame.time.Clock()
@@ -45,7 +44,7 @@ class Controller:
     # Brings up the menu with start and quit buttons
     running = True
     while running:
-        self.screen.fill('floralwhite')
+        self.screen.fill('floralwhite') #fills screen with color
         text = self.font.render('Binghamton Tour', True, 'white', 'black')
         trect = text.get_rect()
         self.screen.blit(text, trect)

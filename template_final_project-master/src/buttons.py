@@ -16,7 +16,7 @@ class Buttons():   #https://docs.python.org/3/tutorial/classes.html < how to set
          self.color = color  #colors of button
          self.text = text #button text
 
-    def display_button(self, screen):
+    def create(self, screen):
         """Creates the button on screen
         Args:
             screen (str): Name of the pyagme screen instance
