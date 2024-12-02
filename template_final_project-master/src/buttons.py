@@ -25,7 +25,7 @@ class Buttons():   #https://docs.python.org/3/tutorial/classes.html < how to set
         
         if self.text: #if there is text for the button this is called
             font = pygame.font.Font(None, 15) #sets the font
-            surface = font.render(self.display, True, 'black') #Sets surface and color
+            surface = font.render(self.text, True, 'black') #Sets surface and color
             textrect = surface.get_rect(center = (self.x +self.width // 2, self.y + self.height // 2)) #Puts text in center
             screen.blit(surface, textrect) #Puts it onto screen
 
