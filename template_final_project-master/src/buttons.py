@@ -12,6 +12,10 @@ class Buttons():   #https://docs.python.org/3/tutorial/classes.html < how to set
             color (str, optional): The color of the button. Defaults to nothing.
             display (str, optional): The message displayed onto the buttons surface. Defaults to nothing.
         """
+         self.x = x
+         self.width = w
+         self.y = y
+         self.height = h
          self.rect = pygame.Rect(x,y,w,h) #makes a button at these coordinates with these dimensions
          self.color = color  #colors of button
          self.text = text #button text
