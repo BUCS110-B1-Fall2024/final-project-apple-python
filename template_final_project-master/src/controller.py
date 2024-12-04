@@ -11,18 +11,13 @@ class Controller:
     self.height = 800
     self.screen = pygame.display.set_mode((self.width, self.height))
     pygame.display.set_caption('College Tour')
-    self.font = pygame.font.Font(None, 20)
+    self.font = pygame.font.Font(None, 60)
     
-    #You can just pull color names from https://www.pygame.org/docs/ref/color_list.html
-    #self.darkgreen = (34,139,34)
-    #self.white = (255,255,255)
-    
-    ##Pictures
+    ##Background Picture
     self.backmain = Images(r"C:\Users\apjen\Desktop\final-project-apple-python\template_final_project-master\assets\BUOverview(upd).png")
-    
     #Buttons for Menuloop
-    self.start = Buttons(200, 350, 75, 50, 'chartreuse4', 'Start') 
-    self.quit = Buttons(525, 350, 75, 50, 'coral1', 'Quit')
+    self.start = Buttons(100, 350, 200, 75, 'chartreuse4', 'Start', 30) 
+    self.quit = Buttons(500, 350, 200, 75, 'coral1', 'Quit', 30)
     
     self.clock = pygame.time.Clock()
     self.clock.tick(60)
@@ -46,8 +41,8 @@ class Controller:
     # Brings up the menu with start and quit buttons
     running = True
     while running:
-        self.screen.fill('floralwhite') #fills screen with color
-        text = self.font.render('Binghamton Tour', True, 'black', 'floralwhite')
+        self.screen.fill('aquamarine4') #fills screen with color
+        text = self.font.render('Binghamton Tour', True, 'black', 'aquamarine4')
         trect = text.get_rect()
         trect.center = (self.width // 2, self.height // 4)
         self.screen.blit(text, trect)
@@ -76,6 +71,14 @@ class Controller:
       ##Main Map Buttons
       quit1 = Buttons(720, 20, 50, 25, 'azure4', 'Quit')
       ciw = Buttons(250, 150, 50, 25, 'chartreuse4', 'CIW')
+      #Dickinson
+      #Hinman
+      #Mountain View
+      #Newing
+      #Old Dickinson
+      #Lecture Hall
+      #Art Building
+      #Science Building
       
       place = None
       
