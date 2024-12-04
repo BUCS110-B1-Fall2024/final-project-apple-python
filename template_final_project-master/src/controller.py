@@ -75,7 +75,7 @@ class Controller:
       
       ##Main Map Buttons
       quit1 = Buttons(720, 20, 50, 25, 'azure4', 'Quit')
-      ciw = Buttons(300, 230, 50, 25, 'chartreuse4', 'CIW')
+      ciw = Buttons(250, 150, 50, 25, 'chartreuse4', 'CIW')
       
       place = None
       
@@ -92,13 +92,12 @@ class Controller:
               return "MENU"
             elif ciw.is_clicked(event.pos):
               place = "CIW"
-              return "places"
+              return self.places(place)
         pygame.display.update()
     
-  def places(self):
+  def places(self, place):
     #Brings user to different places, with an info button
     running = True
-    place = None
     
     #Images
     ciw_pic = Images(r"C:\Users\apjen\Desktop\final-project-apple-python\template_final_project-master\assets\CIW community.png")
