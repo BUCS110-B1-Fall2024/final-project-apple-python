@@ -1,7 +1,6 @@
 import pygame
 
-class Buttons():   #https://docs.python.org/3/tutorial/classes.html < how to set them up 
-    ## if you change the class name then you need to change it in the controller too
+class Buttons():  
     def __init__(self, x, y, w, h, color='', text =''):
          """Allows for the creation of buttons
         Args:

@@ -7,8 +7,8 @@ class Controller:
   def __init__(self):
     #sets up the initial pygame screen
     pygame.init()
-    self.width = 900
-    self.height = 900
+    self.width = 800
+    self.height = 800
     self.screen = pygame.display.set_mode((self.width, self.height))
     pygame.display.set_caption('College Tour')
     self.font = pygame.font.Font(None, 20)
@@ -20,7 +20,7 @@ class Controller:
     # We can use a dictionary of place_name: file_name
     
     self.start = Buttons(200, 350, 75, 50, 'chartreuse4', 'Start') #Creats a button called start
-    self.quit = Buttons(400, 350, 75, 50, 'coral1', 'Quit')
+    self.quit = Buttons(525, 350, 75, 50, 'coral1', 'Quit')
     
     self.clock = pygame.time.Clock()
     self.clock.tick(60)
@@ -45,16 +45,27 @@ class Controller:
     running = True
     while running:
         self.screen.fill('floralwhite') #fills screen with color
-        text = self.font.render('Binghamton Tour', True, 'white', 'black')
+        text = self.font.render('Binghamton Tour', True, 'black', 'floralwhite')
         trect = text.get_rect()
+        trect.center = (self.width // 2, self.height // 4)
         self.screen.blit(text, trect)
+        
+        #Buttons
         self.start.create(self.screen)
         self.quit.create(self.screen)
+        
         for event in pygame.event.get():
           if event.type == pygame.QUIT:
             pygame.quit()
             quit()
-          pygame.display.update()
+          if event.type == pygame.MOUSEBUTTONDOWN:
+            if self.start.is_clicked(event.pos):
+              return "main"
+            elif self.quit.is_clicked(event.pos):
+              pygame.quit()
+              quit()
+          
+        pygame.display.update()
       #update data
 
       #redraw
