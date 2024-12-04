@@ -1,7 +1,7 @@
 import pygame
 
 class Images:
-    def __init__(self, pic_path, x, y):
+    def __init__(self, pic_path, x = 0, y = 0):
         """Allows an image to be put onto the screen, transforms image to our screen size
 
         Args:
@@ -10,7 +10,7 @@ class Images:
             y (int): y-coor. for the picture
         """
         self.pic = pygame.image.load(pic_path)
-        self.pic = pygame.transform.scale(self.pic, (900, 900))
+        self.pic = pygame.transform.scale(self.pic, (800, 800))
         self.coor = x, y
         
     def blit(self, screen):

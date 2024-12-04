@@ -17,9 +17,11 @@ class Controller:
     #self.darkgreen = (34,139,34)
     #self.white = (255,255,255)
     
-    # We can use a dictionary of place_name: file_name
+    ##Pictures
+    self.backmain = Images(r"C:\Users\apjen\Desktop\final-project-apple-python\template_final_project-master\assets\BUOverview(upd).png")
     
-    self.start = Buttons(200, 350, 75, 50, 'chartreuse4', 'Start') #Creats a button called start
+    #Buttons for Menuloop
+    self.start = Buttons(200, 350, 75, 50, 'chartreuse4', 'Start') 
     self.quit = Buttons(525, 350, 75, 50, 'coral1', 'Quit')
     
     self.clock = pygame.time.Clock()
@@ -66,22 +68,53 @@ class Controller:
               quit()
           
         pygame.display.update()
-      #update data
-
-      #redraw
       
   def mainmap(self):
     #Brings user to main map where they can pick were to start
-      #event loop
-      pass
-      #update data
-
-      #redraw
+      running = True
+      
+      ##Main Map Buttons
+      quit1 = Buttons(720, 20, 50, 25, 'azure4', 'Quit')
+      ciw = Buttons(300, 230, 50, 25, 'chartreuse4', 'CIW')
+      
+      place = None
+      
+      while running:
+        self.backmain.blit(self.screen)
+        
+        #Creates Buttons
+        quit1.create(self.screen)
+        ciw.create(self.screen)
+        
+        for event in pygame.event.get():
+          if event.type == pygame.MOUSEBUTTONDOWN:
+            if quit1.is_clicked(event.pos):
+              return "MENU"
+            elif ciw.is_clicked(event.pos):
+              place = "CIW"
+              return "places"
+        pygame.display.update()
     
-  #def places(self):
+  def places(self):
     #Brings user to different places, with an info button
-      #event loop
-
-      #update data
-
-      #redraw
+    running = True
+    place = None
+    
+    #Images
+    ciw_pic = Images(r"C:\Users\apjen\Desktop\final-project-apple-python\template_final_project-master\assets\CIW community.png")
+    
+    quit_places = Buttons(720, 20, 50, 25, 'azure4', 'Quit')
+    
+    while running:
+      if place == "CIW":
+        ciw_pic.blit(self.screen)
+      #elif other places same set up
+      
+      quit_places.create(self.screen)
+      
+      for event in pygame.event.get():
+        if event.type == pygame.MOUSEBUTTONDOWN:
+          if quit_places.is_clicked(event.pos):
+            return "main"
+      pygame.display.update()
+      
