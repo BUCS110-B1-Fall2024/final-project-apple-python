@@ -14,7 +14,7 @@ class Controller:
     self.font = pygame.font.Font(None, 60)
     
     ##Background Picture
-    self.backmain = Images(r"C:\Users\apjen\Desktop\final-project-apple-python\template_final_project-master\assets\BUOverview(upd).png")
+    self.backmain = Images(r"assets\BUOverview(upd).png")
     #Buttons for Menuloop
     self.start = Buttons(100, 350, 200, 75, 'chartreuse4', 'Start', 30) 
     self.quit = Buttons(500, 350, 200, 75, 'coral1', 'Quit', 30)
@@ -103,7 +103,7 @@ class Controller:
     running = True
     
     #Images
-    ciw_pic = Images(r"C:\Users\apjen\Desktop\final-project-apple-python\template_final_project-master\assets\CIW community.png")
+    ciw_pic = Images(r"assets\CIW community.png")
     
     quit_places = Buttons(720, 20, 50, 25, 'azure4', 'Quit')
     
