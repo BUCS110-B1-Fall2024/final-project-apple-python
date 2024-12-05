@@ -73,17 +73,20 @@ class Controller:
       
       ##Main Map Buttons
       quit1 = Buttons(720, 20, 50, 25, 'azure4', 'Quit')
-      ciw = Buttons(250, 150, 50, 25, 'chartreuse4', 'CIW')
-      Newing =Buttons(100,100,50,25,'chartreuse4','Newing')
-      Dickinson =Buttons(200,200,50,25,'chartreuse4','Dickinson')
-      Mountainview = Buttons(500,500,50,25,'chartreuse4', 'Mountainview')
-      Union = Buttons(600,600,50,25, 'chartreuse4', 'Union')
-      Library = Buttons(400,400,50,25, 'chartreuse4', 'Library')
-      Admissions =Buttons(300,300,50,25, 'chartreuse4', 'Admissions')      
-      Hinman = Buttons(700,700, 50,25, 'chartreuse4', 'Hinman')
+      ciw = Buttons(250, 150, 50, 25, 'chartreuse4', 'CIW') #IP
+      Newing = Buttons(35, 380, 50, 25,'chartreuse4','Newing') #IP
+      Dickinson = Buttons(120,240,50, 25,'chartreuse4','Dickinson') #IP
+      Mountainview = Buttons(415, 75, 50, 25,'chartreuse4', 'Mountainview') #IP
+      Union = Buttons(270, 280, 50, 25, 'chartreuse4', 'Union') #IP
+      Library = Buttons(400, 300, 50, 25, 'chartreuse4', 'Library') #IP
+      Admissions = Buttons(210, 290, 50, 25, 'chartreuse4', 'Admissions')  #IP    
+      Hinman = Buttons(550, 220, 50, 25, 'chartreuse4', 'Hinman') #IP
+      old_digman = Buttons(180, 415, 50, 25, 'chartreuse4', 'Old Digman') #IP
+      fine_arts = Buttons(360, 420, 50, 25, 'chartreuse4', 'Fine Arts')
+      west_gym = Buttons(500, 700, 50, 25, 'chartreuse4', 'West Gym')
+      
       #B2Beginning = don't know yet 
-      #Lecture Hall
-      #Art Building  
+      #Lecture Hall  
       #Science Building
       
       place = None
@@ -101,10 +104,14 @@ class Controller:
         Union.create(self.screen)
         Library.create(self.screen)
         Admissions.create(self.screen)
+        old_digman.create(self.screen)
+        fine_arts.create(self.screen)
+        west_gym.create(self.screen)
+        
         #Lecture Hall.create(self.screen)
-        #Art Building.create(self.screen)
         #Science Building.create(self.screen) #placeholders  
         #B2beginnning.create(self.screen)
+        
         for event in pygame.event.get():
           if event.type == pygame.MOUSEBUTTONDOWN:
             if quit1.is_clicked(event.pos):
@@ -133,6 +140,15 @@ class Controller:
             elif Hinman.is_clicked(event.pos):
                 place = "Hinman"
                 return self.places(place)
+            elif old_digman.is_clicked(event.pos):
+              place = "Old Digman"
+              return self.places(place)
+            elif fine_arts.is_clicked(event.pos):
+              place = "Fine Arts"
+              return self.places(place)
+            elif west_gym.is_clicked(event.pos):
+              place = "West Gym"
+              return self.places(place)
         pygame.display.update()
     
   def places(self, place):
@@ -141,13 +157,17 @@ class Controller:
     
     #Images
     ciw_pic = Images(r"assets\CIW community.png")
-    #hinman_pic = Images(r"assets\ inserthere")
-    #newing_pic = Images(r"assets\inserthere")
-    #dickinson_pic= Images(r"assets\inserthere")
+    hinman_pic = Images(r"assets\Hinman community.png")
+    newing_pic = Images(r"assets\Newing community.png")
+    dickinson_pic= Images(r"assets\Dickinson community.png")
+    mountainview_pic = Images(r"assets\MountainView Community.png")
+    oldD_pic = Images(r"assets\Old DIckinson Community.png")
+    #fine_artspic = Images(r"")
+    #west_gympic = Images(r"")
     #union_pic = Images(r"assets\inserthere")
-    #mountainview_pic = Images(r"assets\inserthere")
     #library_pic = Images(r"assets\inserthere")
     #admissions_pic = Images(r"assets\inserthere")
+    
     quit_places = Buttons(720, 20, 50, 25, 'azure4', 'Quit')
     
     while running:
@@ -155,24 +175,29 @@ class Controller:
             ciw_pic.blit(self.screen)
         elif place == "Hinman":
             hinman_pic.blit(self.screen)
-        elif place == "Admissions":
-            admissions_pic.blit(self.screen)
-        elif place == "Union":
-            union_pic.blit(self.screen)
+        #elif place == "Admissions":
+            #admissions_pic.blit(self.screen)
+        #elif place == "Union":
+            #union_pic.blit(self.screen)
         elif place == "Dickinson":
             dickinson_pic.blit(self.screen)
         elif place == "Newing":
             newing_pic.blit(self.screen)
         elif place == "Mountainview":
             mountainview_pic.blit(self.screen)
-        elif place == "Library":
-            library_pic.blit(self.screen)
+        #elif place == "Library":
+            #library_pic.blit(self.screen)
+        elif place == "Old Dickinson":
+          oldD_pic.blit(self.screen)
+        #elif place == "Fine Arts":
+          #fine_artspic.blit(self.screen)
+        #elif place == "West Gym":
+          #west_gympic.blit(self.screen)
         quit_places.create(self.screen)
-            #elif other places same set up
   
         for event in pygame.event.get():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if quit_places.is_clicked(event.pos):
                     return "main"
-      pygame.display.update()
+        pygame.display.update()
       
