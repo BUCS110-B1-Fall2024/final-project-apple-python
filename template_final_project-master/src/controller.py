@@ -15,9 +15,11 @@ class Controller:
     
     ##Background Picture
     self.backmain = Images(r"assets\BUOverview(upd).png")
+    self.backmenu = Images(r"assets\bearcat_1.png", 10, 10)
+    
     #Buttons for Menuloop
-    self.start = Buttons(100, 350, 200, 75, 'chartreuse4', 'Start', 30) 
-    self.quit = Buttons(500, 350, 200, 75, 'coral1', 'Quit', 30)
+    self.start = Buttons(100, 420, 200, 75, 'chartreuse4', 'Start', 30) 
+    self.quit = Buttons(500, 420, 200, 75, 'coral1', 'Quit', 30)
     
     self.clock = pygame.time.Clock()
     self.clock.tick(60)
@@ -46,6 +48,7 @@ class Controller:
         trect = text.get_rect()
         trect.center = (self.width // 2, self.height // 4)
         self.screen.blit(text, trect)
+        self.backmenu.blit(self.screen)
         
         #Buttons
         self.start.create(self.screen)
