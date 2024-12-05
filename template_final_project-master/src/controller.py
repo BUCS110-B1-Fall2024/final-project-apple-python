@@ -74,17 +74,19 @@ class Controller:
       
       ##Main Map Buttons
       quit1 = Buttons(720, 20, 50, 25, 'azure4', 'Quit')
-      ciw = Buttons(250, 150, 50, 25, 'chartreuse4', 'CIW') #IP
-      Newing = Buttons(35, 380, 50, 25,'chartreuse4','Newing') #IP
-      Dickinson = Buttons(120,240,50, 25,'chartreuse4','Dickinson') #IP
-      Mountainview = Buttons(415, 75, 50, 25,'chartreuse4', 'Mountainview') #IP
-      Union = Buttons(270, 280, 50, 25, 'chartreuse4', 'Union') #IP
-      Library = Buttons(400, 300, 50, 25, 'chartreuse4', 'Library') #IP
-      Admissions = Buttons(210, 290, 50, 25, 'chartreuse4', 'Admissions')  #IP    
-      Hinman = Buttons(550, 220, 50, 25, 'chartreuse4', 'Hinman') #IP
-      old_dickinson = Buttons(180, 415, 50, 25, 'chartreuse4', 'Old Dickinson') #IP
-      fine_arts = Buttons(360, 420, 50, 25, 'chartreuse4', 'Fine Arts') #IP
-      west_gym = Buttons(500, 700, 50, 25, 'chartreuse4', 'West Gym') #IP
+      ciw = Buttons(250, 150, 50, 25, 'cornflowerblue', 'CIW') #IP-
+      Newing = Buttons(35, 380, 50, 25,'cornflowerblue','Newing') #IP-
+      Dickinson = Buttons(120, 240, 70, 25,'cornflowerblue','Dickinson') #IP-
+      Mountainview = Buttons(390, 75, 80, 25,'cornflowerblue', 'Mountainview') #IP-
+      Union = Buttons(270, 280, 50, 25, 'cornflowerblue', 'Union') #IP-
+      Library = Buttons(400, 300, 50, 25, 'cornflowerblue', 'Library') #IP-
+      Admissions = Buttons(210, 310, 70, 25, 'cornflowerblue', 'Admissions')  #IP-
+      Hinman = Buttons(550, 220, 55, 25, 'cornflowerblue', 'Hinman') #IP-
+      old_dickinson = Buttons(180, 415, 90, 25, 'cornflowerblue', 'Old Dickinson') #IP-
+      fine_arts = Buttons(360, 420, 60, 25, 'cornflowerblue', 'Fine Arts') #IP-
+      west_gym = Buttons(500, 700, 70, 25, 'cornflowerblue', 'West Gym') #IP-
+      east_gym = Buttons(150, 650, 70, 25, 'cornflowerblue', 'East Gym') #IP-
+      c4 = Buttons(60, 320, 50, 25, 'cornflowerblue', 'C4') #IP-
       
       #B2Beginning = don't know yet 
       #Lecture Hall  
@@ -108,12 +110,17 @@ class Controller:
         old_dickinson.create(self.screen)
         fine_arts.create(self.screen)
         west_gym.create(self.screen)
+        east_gym.create(self.screen)
+        c4.create(self.screen)
         
         #Lecture Hall.create(self.screen)
         #Science Building.create(self.screen) #placeholders  
         #B2beginnning.create(self.screen)
         
         for event in pygame.event.get():
+          if event.type == pygame.QUIT:
+            pygame.quit()
+            quit()
           if event.type == pygame.MOUSEBUTTONDOWN:
             if quit1.is_clicked(event.pos):
               return "MENU"
@@ -150,6 +157,12 @@ class Controller:
             elif west_gym.is_clicked(event.pos):
               place = "West Gym"
               return self.places(place)
+            elif east_gym.is_clicked(event.pos):
+              place = "East Gym"
+              return self.places(place)
+            elif c4.is_clicked(event.pos):
+              place = "C4"
+              return self.places(place)
         pygame.display.update()
     
   def places(self, place):
@@ -165,9 +178,11 @@ class Controller:
     oldD_pic = Images(r"assets\Old DIckinson Community.png")
     #fine_artspic = Images(r"")
     #west_gympic = Images(r"")
+    #east_gympic = Images(r"")
     #union_pic = Images(r"assets\inserthere")
     #library_pic = Images(r"assets\inserthere")
     #admissions_pic = Images(r"assets\inserthere")
+    #c4_pic = Images(r"")
     
     quit_places = Buttons(720, 20, 50, 25, 'azure4', 'Quit')
     info = Buttons(15, 500, 80, 45, 'azure', 'Info')
@@ -197,6 +212,10 @@ class Controller:
           #fine_artspic.blit(self.screen)
         #elif place == "West Gym":
           #west_gympic.blit(self.screen)
+        #elif place == "East Gym"
+          #east_gympic.blit(self.screen)
+        #elif place == "C4"
+          #c4_pic.blit(self.screen)
           
         quit_places.create(self.screen)
         info.create(self.screen)
@@ -206,10 +225,13 @@ class Controller:
           place_info.display(self.screen)
   
         for event in pygame.event.get():
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                if quit_places.is_clicked(event.pos):
-                    return "main"
-                if info.is_clicked(event.pos):
-                  visible_info = not visible_info
+          if event.type == pygame.QUIT:
+            pygame.quit()
+            quit()
+          if event.type == pygame.MOUSEBUTTONDOWN:
+              if quit_places.is_clicked(event.pos):
+                return "main"
+              if info.is_clicked(event.pos):
+                visible_info = not visible_info
         pygame.display.update()
       

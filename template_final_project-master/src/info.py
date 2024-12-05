@@ -28,7 +28,13 @@ class Info:
             
             "Old Dickinson": "The oldest community on campus that has now been turned into a general academic department. Here you can find the math department in Whitney Hall and academic advising in Old Champlain hall.",
             
-            "Fine Arts": "The Fine Arts building hosts the schools drawing, painting, sculpting, and printmaking classes. It has a wonderful courtyard. It also has its own art gallery, and is home to the school's theatre department."
+            "Fine Arts": "The Fine Arts building hosts the schools drawing, painting, sculpting, and printmaking classes. It has a wonderful courtyard. It also has its own art gallery, and is home to the school's theatre department.",
+            
+            "Union": "Located in the center of campus, this building serves as a hub for student activities. It holds the market place, bookstore, Visions Federal Credit Union, bowling, and pool!",
+            
+            "Library": "The Bartle Library houses a massive collection of books that are available to be checked out by students. It also has a coffee shop, along with an underground labyrinth where some classes are held. There are also many study spaces, with the fourth floor of the library being the best one.",
+            
+            "Admissions": " Here at the admissions center, there are people here who help you decide what college to go to, and give in-person tours for transfers and highschool students. Classes for communications and marketing are held here as well."
         }
         
         return info_dict.get(place)
