@@ -1,6 +1,7 @@
 import pygame
 from src.buttons import Buttons
 from src.images import Images
+from src.info import Info
 
 class Controller:
   
@@ -8,7 +9,7 @@ class Controller:
     #sets up the initial pygame screen
     pygame.init()
     self.width = 800
-    self.height = 800
+    self.height = 750
     self.screen = pygame.display.set_mode((self.width, self.height))
     pygame.display.set_caption('College Tour')
     self.font = pygame.font.Font(None, 60)
@@ -81,7 +82,7 @@ class Controller:
       Library = Buttons(400, 300, 50, 25, 'chartreuse4', 'Library') #IP
       Admissions = Buttons(210, 290, 50, 25, 'chartreuse4', 'Admissions')  #IP    
       Hinman = Buttons(550, 220, 50, 25, 'chartreuse4', 'Hinman') #IP
-      old_digman = Buttons(180, 415, 50, 25, 'chartreuse4', 'Old Digman') #IP
+      old_dickinson = Buttons(180, 415, 50, 25, 'chartreuse4', 'Old Dickinson') #IP
       fine_arts = Buttons(360, 420, 50, 25, 'chartreuse4', 'Fine Arts') #IP
       west_gym = Buttons(500, 700, 50, 25, 'chartreuse4', 'West Gym') #IP
       
@@ -104,7 +105,7 @@ class Controller:
         Union.create(self.screen)
         Library.create(self.screen)
         Admissions.create(self.screen)
-        old_digman.create(self.screen)
+        old_dickinson.create(self.screen)
         fine_arts.create(self.screen)
         west_gym.create(self.screen)
         
@@ -140,8 +141,8 @@ class Controller:
             elif Hinman.is_clicked(event.pos):
                 place = "Hinman"
                 return self.places(place)
-            elif old_digman.is_clicked(event.pos):
-              place = "Old Digman"
+            elif old_dickinson.is_clicked(event.pos):
+              place = "Old Dickinson"
               return self.places(place)
             elif fine_arts.is_clicked(event.pos):
               place = "Fine Arts"
@@ -171,6 +172,8 @@ class Controller:
     quit_places = Buttons(720, 20, 50, 25, 'azure4', 'Quit')
     info = Buttons(15, 500, 80, 45, 'azure', 'Info')
     
+    visible_info = False
+    
     while running:
         if place == "CIW":
             ciw_pic.blit(self.screen)
@@ -188,41 +191,25 @@ class Controller:
             mountainview_pic.blit(self.screen)
         #elif place == "Library":
             #library_pic.blit(self.screen)
-        elif place == "Old Digman":
+        elif place == "Old Dickinson":
           oldD_pic.blit(self.screen)
         #elif place == "Fine Arts":
           #fine_artspic.blit(self.screen)
         #elif place == "West Gym":
           #west_gympic.blit(self.screen)
+          
         quit_places.create(self.screen)
         info.create(self.screen)
+        
+        if visible_info:
+          place_info = Info(place)
+          place_info.display(self.screen)
   
         for event in pygame.event.get():
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if quit_places.is_clicked(event.pos):
                     return "main"
                 if info.is_clicked(event.pos):
-                  if place == "CIW":
-                    pass
-                  elif place == "Hinman":
-                    pass
-                  elif place == "Admissions":
-                    pass
-                  elif place == "Union":
-                    pass
-                  elif place == "Dickinson":
-                    pass
-                  elif place == "Newing":
-                    pass
-                  elif place == "Mountain View":
-                    pass
-                  elif place == "Library":
-                    pass
-                  elif place == "Old Digman":
-                    pass
-                  elif place == "Fine Arts":
-                    pass
-                  elif place == "West Gym":
-                    pass
+                  visible_info = not visible_info
         pygame.display.update()
       
