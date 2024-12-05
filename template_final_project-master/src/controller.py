@@ -140,7 +140,7 @@ class Controller:
                 place = "Admissions"
                 return self.places(place)
             elif Mountainview.is_clicked(event.pos):
-                place = "Mountainview"
+                place = "Mountain View"
                 return self.places(place)
             elif Dickinson.is_clicked(event.pos):
                 place = "Dickinson"
@@ -170,7 +170,7 @@ class Controller:
               place = "C4"
               return self.places(place)
             elif manage_school.is_clicked(event.pos):
-              place = "School of Managment"
+              place = "School of Management"
               return self.places(place)
             elif app.is_clicked(event.pos):
               place = "App"
@@ -216,7 +216,7 @@ class Controller:
             dickinson_pic.blit(self.screen)
         elif place == "Newing":
             newing_pic.blit(self.screen)
-        elif place == "Mountainview":
+        elif place == "Mountain View":
             mountainview_pic.blit(self.screen)
         elif place == "Library":
             library_pic.blit(self.screen)
