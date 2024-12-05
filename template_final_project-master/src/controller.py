@@ -44,7 +44,8 @@ class Controller:
     # Brings up the menu with start and quit buttons
     running = True
     while running:
-        self.screen.fill('aquamarine4') #fills screen with color
+        #Screen Set up
+        self.screen.fill('aquamarine4') 
         text = self.font.render('Binghamton Tour', True, 'black', 'aquamarine4')
         trect = text.get_rect()
         trect.center = (self.width // 2, self.height // 4)
@@ -55,6 +56,7 @@ class Controller:
         self.start.create(self.screen)
         self.quit.create(self.screen)
         
+        #Event Loop
         for event in pygame.event.get():
           if event.type == pygame.QUIT:
             pygame.quit()
@@ -69,7 +71,7 @@ class Controller:
         pygame.display.update()
       
   def mainmap(self):
-    #Brings user to main map where they can pick were to start
+    #Brings user to main map where they can pick where to start
       running = True
       
       ##Main Map Buttons

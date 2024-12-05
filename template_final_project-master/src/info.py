@@ -2,13 +2,25 @@ import pygame
 
 class Info:
     def __init__(self, place):
-        #blits info onto screen corresponding to the image displayed
+        """This class creates a way to show our info on screen.
+
+        Args:
+            place (str): The name of the place for the info that we will be showing, is determined by button pressed in mainmap
+        """
         self.font = pygame.font.Font(None, 30)
         self.place = place
         self.text = self.get_text(place)
         self.border = 20
         
     def get_text(self, place):
+        """Holds a dictionary of all place names with the information for each place
+
+        Args:
+            place (str): The name of the place for the info that we will be showing, is determined by button pressed in mainmap
+
+        Returns:
+            info_dict.get(place) (str): the information for the place selected
+        """
         info_dict = {
             "Hinman": "Hinman community has been home for on campus students for over 50 years. Hinman community has its own convenience store, a ground turf, the Hinman success center and one of the most popular food options called Noodle House. Noodle House serves stir fried noodles with vegetables, meat (or tofu if you're vegan), and a variety of sauces to choose from. Hinman is also the closest community to all of the academic buildings.",
             
@@ -40,6 +52,15 @@ class Info:
         return info_dict.get(place)
     
     def wraptext(self, text, max_width):
+        """Allows the text to wrap around the text box so it can be neatly displayed
+
+        Args:
+            text (str): This text is determined by the place selected, and is found in the get_text method
+            max_width (int): The max width of the line, which is determined by our font size
+
+        Returns:
+            lines (list): The lines for the text box, seperated so they can be wrapped
+        """
         words = text.split(' ')
         lines = []
         current_line = words[0]
@@ -56,6 +77,11 @@ class Info:
         return lines
     
     def display(self, screen):
+        """Creates a way to display the text and box on screen
+
+        Args:
+            screen (str): What the pygame display window is called
+        """
         #box setup
         box_x = 0
         box_y = 750 - (750 // 4)
