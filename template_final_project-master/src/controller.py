@@ -173,17 +173,17 @@ class Controller:
     
     #Images
     ciw_pic = Images(r"assets\CIW community.png")
-    hinman_pic = Images(r"assets\Hinman community.png")
+    hinman_pic = Images(r"assets\HInman community.png")
     newing_pic = Images(r"assets\Newing community.png")
     dickinson_pic= Images(r"assets\Dickinson community.png")
     mountainview_pic = Images(r"assets\MountainView Community.png")
     oldD_pic = Images(r"assets\Old DIckinson Community.png")
-    #fine_artspic = Images(r"")
+    fine_artspic = Images(r"assets\Fine Arts main.png")
     #west_gympic = Images(r"")
     #east_gympic = Images(r"")
-    #union_pic = Images(r"assets\inserthere")
-    #library_pic = Images(r"assets\inserthere")
-    #admissions_pic = Images(r"assets\inserthere")
+    union_pic = Images(r"assets\Western Union.png")
+    library_pic = Images(r"assets\Library1.png")
+    admissions_pic = Images(r"assets\Admissions.pnge")
     #c4_pic = Images(r"")
     
     quit_places = Buttons(720, 20, 50, 25, 'azure4', 'Quit')
@@ -196,22 +196,22 @@ class Controller:
             ciw_pic.blit(self.screen)
         elif place == "Hinman":
             hinman_pic.blit(self.screen)
-        #elif place == "Admissions":
-            #admissions_pic.blit(self.screen)
-        #elif place == "Union":
-            #union_pic.blit(self.screen)
+        elif place == "Admissions":
+            admissions_pic.blit(self.screen)
+        elif place == "Union":
+            union_pic.blit(self.screen)
         elif place == "Dickinson":
             dickinson_pic.blit(self.screen)
         elif place == "Newing":
             newing_pic.blit(self.screen)
         elif place == "Mountainview":
             mountainview_pic.blit(self.screen)
-        #elif place == "Library":
-            #library_pic.blit(self.screen)
+        elif place == "Library":
+            library_pic.blit(self.screen)
         elif place == "Old Dickinson":
           oldD_pic.blit(self.screen)
-        #elif place == "Fine Arts":
-          #fine_artspic.blit(self.screen)
+        elif place == "Fine Arts":
+          fine_artspic.blit(self.screen)
         #elif place == "West Gym":
           #west_gympic.blit(self.screen)
         #elif place == "East Gym"
