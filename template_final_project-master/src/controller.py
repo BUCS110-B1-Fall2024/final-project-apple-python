@@ -188,7 +188,7 @@ class Controller:
             mountainview_pic.blit(self.screen)
         #elif place == "Library":
             #library_pic.blit(self.screen)
-        elif place == "Old Dickinson":
+        elif place == "Old Digman":
           oldD_pic.blit(self.screen)
         #elif place == "Fine Arts":
           #fine_artspic.blit(self.screen)
@@ -201,5 +201,28 @@ class Controller:
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if quit_places.is_clicked(event.pos):
                     return "main"
+                if info.is_clicked(event.pos):
+                  if place == "CIW":
+                    pass
+                  elif place == "Hinman":
+                    pass
+                  elif place == "Admissions":
+                    pass
+                  elif place == "Union":
+                    pass
+                  elif place == "Dickinson":
+                    pass
+                  elif place == "Newing":
+                    pass
+                  elif place == "Mountain View":
+                    pass
+                  elif place == "Library":
+                    pass
+                  elif place == "Old Digman":
+                    pass
+                  elif place == "Fine Arts":
+                    pass
+                  elif place == "West Gym":
+                    pass
         pygame.display.update()
       
