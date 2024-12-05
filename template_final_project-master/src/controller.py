@@ -79,7 +79,7 @@ class Controller:
       ciw = Buttons(250, 150, 50, 25, 'cornflowerblue', 'CIW') #IP-
       Newing = Buttons(35, 380, 50, 25,'cornflowerblue','Newing') #IP-
       Dickinson = Buttons(120, 240, 70, 25,'cornflowerblue','Dickinson') #IP-
-      Mountainview = Buttons(390, 75, 80, 25,'cornflowerblue', 'Mountainview') #IP-
+      Mountainview = Buttons(390, 60, 80, 25,'cornflowerblue', 'Mountainview') #IP-
       Union = Buttons(270, 280, 50, 25, 'cornflowerblue', 'Union') #IP-
       Library = Buttons(400, 300, 50, 25, 'cornflowerblue', 'Library') #IP-
       Admissions = Buttons(210, 310, 70, 25, 'cornflowerblue', 'Admissions')  #IP-
@@ -89,6 +89,8 @@ class Controller:
       west_gym = Buttons(500, 700, 70, 25, 'cornflowerblue', 'West Gym') #IP-
       east_gym = Buttons(150, 650, 70, 25, 'cornflowerblue', 'East Gym') #IP-
       c4 = Buttons(60, 320, 50, 25, 'cornflowerblue', 'C4') #IP-
+      manage_school = Buttons(570, 350, 120, 25, 'cornflowerblue', 'School of Management')
+      app = Buttons(390, 110, 90, 25, 'cornflowerblue', 'App Dinning Hall')
       
       #B2Beginning = don't know yet 
       #Lecture Hall  
@@ -114,6 +116,8 @@ class Controller:
         west_gym.create(self.screen)
         east_gym.create(self.screen)
         c4.create(self.screen)
+        manage_school.create(self.screen)
+        app.create(self.screen)
         
         #Lecture Hall.create(self.screen)
         #Science Building.create(self.screen) #placeholders  
@@ -165,6 +169,12 @@ class Controller:
             elif c4.is_clicked(event.pos):
               place = "C4"
               return self.places(place)
+            elif manage_school.is_clicked(event.pos):
+              place = "School of Managment"
+              return self.places(place)
+            elif app.is_clicked(event.pos):
+              place = "App"
+              return self.places(place)
         pygame.display.update()
     
   def places(self, place):
@@ -183,8 +193,10 @@ class Controller:
     #east_gympic = Images(r"")
     union_pic = Images(r"assets\Western Union.png")
     library_pic = Images(r"assets\Library1.png")
-    admissions_pic = Images(r"assets\Admissions.pnge")
+    admissions_pic = Images(r"assets\Admissions.png")
     #c4_pic = Images(r"")
+    manage_schoolpic = Images(r"assets\ABA.png")
+    app_pic = Images(r"assets\Appdininghall.png")
     
     quit_places = Buttons(720, 20, 50, 25, 'azure4', 'Quit')
     info = Buttons(15, 500, 80, 45, 'azure', 'Info')
@@ -218,6 +230,10 @@ class Controller:
           #east_gympic.blit(self.screen)
         #elif place == "C4"
           #c4_pic.blit(self.screen)
+        elif place == "School of Management":
+          manage_schoolpic.blit(self.screen)
+        elif place == "App":
+          app_pic.blit(self.screen)
           
         quit_places.create(self.screen)
         info.create(self.screen)

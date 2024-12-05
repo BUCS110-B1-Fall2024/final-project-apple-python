@@ -46,10 +46,14 @@ class Info:
             
             "Library": "The Bartle Library houses a massive collection of books that are available to be checked out by students. It also has a coffee shop, along with an underground labyrinth where some classes are held. There are also many study spaces, with the fourth floor of the library being the best one.",
             
-            "Admissions": " Here at the admissions center, there are people here who help you decide what college to go to, and give in-person tours for transfers and highschool students. Classes for communications and marketing are held here as well."
+            "Admissions": " Here at the admissions center, there are people here who help you decide what college to go to, and give in-person tours for transfers and highschool students. Classes for communications and marketing are held here as well.",
+            
+            "School of Management": "Is the school for business majors. Their accounting education is amoung the best in the country. Also has a career services section where current and past students can get help finding jobs.",
+            
+            "App": "Those that live in Mountainview get to experience the lofty feeling of eating here at Appalachian. Like the other dining halls on campus, this one has its own ice cream bar alongside its own variety of stations including pancakes, wings, pasta and more."
         }
         
-        return info_dict.get(place)
+        return info_dict.get(place, "Info Not Available")
     
     def wraptext(self, text, max_width):
         """Allows the text to wrap around the text box so it can be neatly displayed
