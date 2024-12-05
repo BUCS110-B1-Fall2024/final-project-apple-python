@@ -49,6 +49,6 @@ Class Controller: Defines the game controller
 |----------------------|:--------------------:|----------------------------------:|
 |  1                   | Click Quit Button    |Program closes                     |
 |  2                   | Click Start Button   | State loop changes to mainmap, mainmap pops up |
-|  3                   | Within Main Map, Click Hinman Button| A Picture of Hinman pops up, along with info Buttons|
-|  4                   | Within Main Map, Click Quit button in top right corner | User is taken back to start screen |
-|  5                   | Within Hinman,click info Button | On the lower 4th of the screen, information about Hinman College displays |
+|  3                   | Within Main Map, Click Hinman Button| A Picture of Hinman pops up, along with info button|
+|  4                   | Within Main Map, Click Quit Button in Top Right Corner | User is taken back to start screen |
+|  5                   | Within Hinman, Click Info Button | On the lower 4th of the screen, information about Hinman College displays |

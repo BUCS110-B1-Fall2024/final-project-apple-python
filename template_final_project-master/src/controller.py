@@ -82,8 +82,8 @@ class Controller:
       Admissions = Buttons(210, 290, 50, 25, 'chartreuse4', 'Admissions')  #IP    
       Hinman = Buttons(550, 220, 50, 25, 'chartreuse4', 'Hinman') #IP
       old_digman = Buttons(180, 415, 50, 25, 'chartreuse4', 'Old Digman') #IP
-      fine_arts = Buttons(360, 420, 50, 25, 'chartreuse4', 'Fine Arts')
-      west_gym = Buttons(500, 700, 50, 25, 'chartreuse4', 'West Gym')
+      fine_arts = Buttons(360, 420, 50, 25, 'chartreuse4', 'Fine Arts') #IP
+      west_gym = Buttons(500, 700, 50, 25, 'chartreuse4', 'West Gym') #IP
       
       #B2Beginning = don't know yet 
       #Lecture Hall  
@@ -169,6 +169,7 @@ class Controller:
     #admissions_pic = Images(r"assets\inserthere")
     
     quit_places = Buttons(720, 20, 50, 25, 'azure4', 'Quit')
+    info = Buttons(15, 500, 80, 45, 'azure', 'Info')
     
     while running:
         if place == "CIW":
@@ -194,6 +195,7 @@ class Controller:
         #elif place == "West Gym":
           #west_gympic.blit(self.screen)
         quit_places.create(self.screen)
+        info.create(self.screen)
   
         for event in pygame.event.get():
             if event.type == pygame.MOUSEBUTTONDOWN:
