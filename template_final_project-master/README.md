@@ -24,7 +24,8 @@ Our project will take the user on a tour of the Binghamton campus. It will inclu
 
 ### Final Design
 
-![final gui](assets/finalgui.jpg)
+(assets\main_gui.png)
+(assets\ciw_gui.png)
 
 ## Program Design
 
@@ -41,6 +42,7 @@ Our project will take the user on a tour of the Binghamton campus. It will inclu
 Class Buttons: makes buttons depending on a given input
 Class Images: Allows images to be displayed
 Class Controller: Defines the game controller
+Class Info: Stores the place information, and allows it to be displayed on screen
 
 
 ## ATP
