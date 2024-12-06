@@ -6,6 +6,8 @@ from src.info import Info
 class Controller:
   
   def __init__(self):
+    """Sets up the intial pygame window, along with menu buttons, and background pictures for the menu and main map.
+    """
     #sets up the initial pygame screen
     pygame.init()
     self.width = 800
@@ -26,6 +28,8 @@ class Controller:
     self.clock.tick(60)
     
   def mainloop(self):
+    """Sets up the state loop for the menu, main map, and the different places
+    """
     #selects state loop
     state = "MENU"
     running = True
@@ -41,6 +45,11 @@ class Controller:
     pygame.quit()
 
   def menuloop(self):
+    """Sets up the menu screen with a start and quit button
+
+    Returns:
+        "main" (str): Returns "main" to the main loop to change the state
+    """
     # Brings up the menu with start and quit buttons
     running = True
     while running:
@@ -71,113 +80,118 @@ class Controller:
         pygame.display.update()
       
   def mainmap(self):
+    """Creates the main map, along with all of the buttons
+
+    Returns:
+    self.places(place) (str): Changes the state to places, along with the place name
+    """
     #Brings user to main map where they can pick where to start
-      running = True
+    running = True
       
-      ##Main Map Buttons
-      quit1 = Buttons(720, 20, 50, 25, 'azure4', 'Quit')
-      ciw = Buttons(250, 150, 50, 25, 'cornflowerblue', 'CIW') #IP-
-      Newing = Buttons(35, 380, 50, 25,'cornflowerblue','Newing') #IP-
-      Dickinson = Buttons(120, 240, 70, 25,'cornflowerblue','Dickinson') #IP-
-      Mountainview = Buttons(390, 60, 80, 25,'cornflowerblue', 'Mountainview') #IP-
-      Union = Buttons(270, 280, 50, 25, 'cornflowerblue', 'Union') #IP-
-      Library = Buttons(400, 300, 50, 25, 'cornflowerblue', 'Library') #IP-
-      Admissions = Buttons(210, 310, 70, 25, 'cornflowerblue', 'Admissions')  #IP-
-      Hinman = Buttons(550, 220, 55, 25, 'cornflowerblue', 'Hinman') #IP-
-      old_dickinson = Buttons(180, 415, 90, 25, 'cornflowerblue', 'Old Dickinson') #IP-
-      fine_arts = Buttons(360, 420, 60, 25, 'cornflowerblue', 'Fine Arts') #IP-
-      west_gym = Buttons(500, 700, 70, 25, 'cornflowerblue', 'West Gym') #IP-
-      east_gym = Buttons(150, 650, 70, 25, 'cornflowerblue', 'East Gym') #IP-
-      c4 = Buttons(60, 320, 50, 25, 'cornflowerblue', 'C4') #IP-
-      manage_school = Buttons(570, 350, 120, 25, 'cornflowerblue', 'School of Management')
-      app = Buttons(390, 110, 90, 25, 'cornflowerblue', 'App Dinning Hall')
+    ##Main Map Buttons
+    quit1 = Buttons(720, 20, 50, 25, 'azure4', 'Quit')
+    ciw = Buttons(250, 150, 50, 25, 'cornflowerblue', 'CIW')
+    Newing = Buttons(35, 380, 50, 25,'cornflowerblue','Newing')
+    Dickinson = Buttons(120, 240, 70, 25,'cornflowerblue','Dickinson')
+    Mountainview = Buttons(390, 60, 80, 25,'cornflowerblue', 'Mountainview')
+    Union = Buttons(270, 280, 50, 25, 'cornflowerblue', 'Union')
+    Library = Buttons(400, 300, 50, 25, 'cornflowerblue', 'Library')
+    Admissions = Buttons(210, 310, 70, 25, 'cornflowerblue', 'Admissions')
+    Hinman = Buttons(550, 220, 55, 25, 'cornflowerblue', 'Hinman')
+    old_dickinson = Buttons(180, 415, 90, 25, 'cornflowerblue', 'Old Dickinson')
+    fine_arts = Buttons(360, 420, 60, 25, 'cornflowerblue', 'Fine Arts')
+    west_gym = Buttons(500, 700, 70, 25, 'cornflowerblue', 'West Gym')
+    east_gym = Buttons(150, 650, 70, 25, 'cornflowerblue', 'East Gym')
+    c4 = Buttons(60, 320, 50, 25, 'cornflowerblue', 'C4') 
+    manage_school = Buttons(570, 350, 120, 25, 'cornflowerblue', 'School of Management')
+    app = Buttons(390, 110, 90, 25, 'cornflowerblue', 'App Dinning Hall')
       
-      #B2Beginning = don't know yet 
-      #Lecture Hall  
-      #Science Building
+    place = None
       
-      place = None
-      
-      while running:
-        self.backmain.blit(self.screen)
+    while running:
+      self.backmain.blit(self.screen)
         
-        #Creates Buttons
-        quit1.create(self.screen)
-        ciw.create(self.screen)
-        Newing.create(self.screen)
-        Mountainview.create(self.screen)
-        Dickinson.create(self.screen)
-        Hinman.create(self.screen)
-        Union.create(self.screen)
-        Library.create(self.screen)
-        Admissions.create(self.screen)
-        old_dickinson.create(self.screen)
-        fine_arts.create(self.screen)
-        west_gym.create(self.screen)
-        east_gym.create(self.screen)
-        c4.create(self.screen)
-        manage_school.create(self.screen)
-        app.create(self.screen)
+      #Creates Buttons
+      quit1.create(self.screen)
+      ciw.create(self.screen)
+      Newing.create(self.screen)
+      Mountainview.create(self.screen)
+      Dickinson.create(self.screen)
+      Hinman.create(self.screen)
+      Union.create(self.screen)
+      Library.create(self.screen)
+      Admissions.create(self.screen)
+      old_dickinson.create(self.screen)
+      fine_arts.create(self.screen)
+      west_gym.create(self.screen)
+      east_gym.create(self.screen)
+      c4.create(self.screen)
+      manage_school.create(self.screen)
+      app.create(self.screen)
         
-        #Lecture Hall.create(self.screen)
-        #Science Building.create(self.screen) #placeholders  
-        #B2beginnning.create(self.screen)
-        
-        for event in pygame.event.get():
-          if event.type == pygame.QUIT:
-            pygame.quit()
-            quit()
-          if event.type == pygame.MOUSEBUTTONDOWN:
-            if quit1.is_clicked(event.pos):
-              return "MENU"
-            elif ciw.is_clicked(event.pos):
-              place = "CIW"
-              return self.places(place)
-            elif Library.is_clicked(event.pos):
-                place = "Library"
-                return self.places(place)
-            elif Admissions.is_clicked(event.pos):
-                place = "Admissions"
-                return self.places(place)
-            elif Mountainview.is_clicked(event.pos):
-                place = "Mountain View"
-                return self.places(place)
-            elif Dickinson.is_clicked(event.pos):
-                place = "Dickinson"
-                return self.places(place)
-            elif Newing.is_clicked(event.pos):
-                place = "Newing"
-                return self.places(place)
-            elif Union.is_clicked(event.pos):
-                place = "Union"
-                return self.places(place)
-            elif Hinman.is_clicked(event.pos):
-                place = "Hinman"
-                return self.places(place)
-            elif old_dickinson.is_clicked(event.pos):
-              place = "Old Dickinson"
-              return self.places(place)
-            elif fine_arts.is_clicked(event.pos):
-              place = "Fine Arts"
-              return self.places(place)
-            elif west_gym.is_clicked(event.pos):
-              place = "West Gym"
-              return self.places(place)
-            elif east_gym.is_clicked(event.pos):
-              place = "East Gym"
-              return self.places(place)
-            elif c4.is_clicked(event.pos):
-              place = "C4"
-              return self.places(place)
-            elif manage_school.is_clicked(event.pos):
-              place = "School of Management"
-              return self.places(place)
-            elif app.is_clicked(event.pos):
-              place = "App"
-              return self.places(place)
+      for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+          pygame.quit()
+          quit()
+        if event.type == pygame.MOUSEBUTTONDOWN:
+          if quit1.is_clicked(event.pos):
+            return "MENU"
+          elif ciw.is_clicked(event.pos):
+            place = "CIW"
+            return self.places(place)
+          elif Library.is_clicked(event.pos):
+            place = "Library"
+            return self.places(place)
+          elif Admissions.is_clicked(event.pos):
+            place = "Admissions"
+            return self.places(place)
+          elif Mountainview.is_clicked(event.pos):
+            place = "Mountain View"
+            return self.places(place)
+          elif Dickinson.is_clicked(event.pos):
+            place = "Dickinson"
+            return self.places(place)
+          elif Newing.is_clicked(event.pos):
+            place = "Newing"
+            return self.places(place)
+          elif Union.is_clicked(event.pos):
+            place = "Union"
+            return self.places(place)
+          elif Hinman.is_clicked(event.pos):
+            place = "Hinman"
+            return self.places(place)
+          elif old_dickinson.is_clicked(event.pos):
+            place = "Old Dickinson"
+            return self.places(place)
+          elif fine_arts.is_clicked(event.pos):
+            place = "Fine Arts"
+            return self.places(place)
+          elif west_gym.is_clicked(event.pos):
+            place = "West Gym"
+            return self.places(place)
+          elif east_gym.is_clicked(event.pos):
+            place = "East Gym"
+            return self.places(place)
+          elif c4.is_clicked(event.pos):
+            place = "C4"
+            return self.places(place)
+          elif manage_school.is_clicked(event.pos):
+            place = "School of Management"
+            return self.places(place)
+          elif app.is_clicked(event.pos):
+            place = "App"
+            return self.places(place)
         pygame.display.update()
     
   def places(self, place):
+    """Changes the background according to the place selected, also handles the information
+
+    Args:
+        place (str): Which place was picked on the main map
+
+    Returns:
+        "main" (str): Returns "main" to change the state back to the main loop
+    """
     #Brings user to different places, with an info button
     running = True
     
