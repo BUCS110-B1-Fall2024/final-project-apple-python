@@ -190,11 +190,11 @@ class Controller:
     oldD_pic = Images(r"assets\Old DIckinson Community.png")
     fine_artspic = Images(r"assets\Fine Arts main.png")
     west_gympic = Images(r"assets\Screenshot 2024-12-05 184522.png")
-    #east_gympic = Images(r"")
+    east_gympic = Images(r"assets\East_Gym.png")
     union_pic = Images(r"assets\Western Union.png")
     library_pic = Images(r"assets\Library1.png")
     admissions_pic = Images(r"assets\Admissions.png")
-    #c4_pic = Images(r"")
+    c4_pic = Images(r"assets\C4.png")
     manage_schoolpic = Images(r"assets\ABA.png")
     app_pic = Images(r"assets\Appdininghall.png")
     
@@ -226,10 +226,10 @@ class Controller:
           fine_artspic.blit(self.screen)
         elif place == "West Gym":
           west_gympic.blit(self.screen)
-        #elif place == "East Gym"
-          #east_gympic.blit(self.screen)
-        #elif place == "C4"
-          #c4_pic.blit(self.screen)
+        elif place == "East Gym":
+          east_gympic.blit(self.screen)
+        elif place == "C4":
+          c4_pic.blit(self.screen)
         elif place == "School of Management":
           manage_schoolpic.blit(self.screen)
         elif place == "App":
@@ -252,4 +252,3 @@ class Controller:
               if info.is_clicked(event.pos):
                 visible_info = not visible_info
         pygame.display.update()
-      
