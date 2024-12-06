@@ -189,7 +189,7 @@ class Controller:
     mountainview_pic = Images(r"assets\MountainView Community.png")
     oldD_pic = Images(r"assets\Old DIckinson Community.png")
     fine_artspic = Images(r"assets\Fine Arts main.png")
-    #west_gympic = Images(r"")
+    west_gympic = Images(r"assets\Screenshot 2024-12-05 184522.png")
     #east_gympic = Images(r"")
     union_pic = Images(r"assets\Western Union.png")
     library_pic = Images(r"assets\Library1.png")
@@ -224,8 +224,8 @@ class Controller:
           oldD_pic.blit(self.screen)
         elif place == "Fine Arts":
           fine_artspic.blit(self.screen)
-        #elif place == "West Gym":
-          #west_gympic.blit(self.screen)
+        elif place == "West Gym":
+          west_gympic.blit(self.screen)
         #elif place == "East Gym"
           #east_gympic.blit(self.screen)
         #elif place == "C4"
